@@ -1,0 +1,148 @@
+/* CSS 파일은 <style> 태그 내부라고 생각 */
+
+/* 
+선택자
+
+id 선택자( # ) : #id 속성값 {}
+
+tag선택자(태그명) : 태그명 {}
+
+class선택자( . ) : .class 속성값 {}
+
+모든 요소 선택자( * , 에스터리스크 ) : * {}
+
+기본 속성 선택자 : 선택자A [속성명 = '속성값'] {}
+                   [속성명], [속성명 = '속성값']
+
+자식 선택자( > , 1단계 하위 ) : 부모 요소 > 자식 요소
+
+후손 선택자(띄어쓰기, 하위 모두) : 부모(조상) 요소 후손 요소
+
+포커스가 맞춰 졌을 때(:focus) : 선택자A:focus {}
+                                (선택자A는 input 요소)
+
+체크가 되었을 때(:checked) : 선택자A:checked {}
+                            (radio, checkbox 타입만 가능)
+
+활성화 상태일 때(:enabled) : 선택자A:enabled {}
+                            (선택자A는 input 요소)
+
+비활성화 상태일 때(:disabled) : 선택자A:disabled {}
+                                (선택자A는 input 요소)
+
+마우스를 올렸을 때(:hover) : 선택자A:hover {}
+
+클릭을 하고 있을 때(:active) : 선택자A:active {}
+(클릭 버튼을 누르고 있을 때)
+
+바로 뒤 형제 선택( + ) : 선택자A + 선택자B
+
+뒤에 있는 일치하는 형제 모두 선택( ~ , 틸드) : 선택자A ~ 선택자B
+
+일반 구조 선택(위치 기준)
+-> 선택된 요소가 지정된 위치의 요소가 맞으면 선택하는 선택자
+
+선택된 요소가 첫 번째 요소가 맞는 경우 : 선택자A:first-child {}
+              (위치상)
+선택된 요소가 마지막 요소가 맞는 경우 : 선택자A:last-child {}
+
+선택된 요소가 n번째 요소가 맞는 경우 : 선택자A:nth-child(숫자) {}
+                                       선택자A:nth-child(수열) {}
+
+선택된 요소가 뒤에서 n번째 요소가 맞는 경우 : 선택자A:nth-last-child(숫자) {}
+                                              선택자A:nth-last-child(수열) {}
+
+
+
+형태 구조 선택자 
+-> 선택된 요소가 지정된 요소 중 몇 번째 요소가 맞으면 선택
+
+같이 선택된 형제들 중에서 첫 번째 요소 : 선택자A:first-of-type {}
+
+같이 선택된 형제들 중에서 마지막 요소 : 선택자A:last-of-type {}
+
+같이 선택된 형제들 중에서 n번째 요소 : 선택자A:nth-of-type(숫자) {}
+                                       선택자A:nth-of-type(수열) {}
+
+같이 선택된 형제들 중에서 뒤에서 n번째 요소 : 선택자A:nth-last-of-type(숫자) {}
+                                              선택자A:nth-last-of-type(수열) {}
+
+
+                                              
+부정 선택자(:not())            :          선택자A:not(선택자B)
+-> 특정 요소만 빼고 선택                 (선택된 A 중에서 B만 빼고 선택)
+
+여러 선택자 동시 작성 : 선택자A, 선택자B {}
+
+여러 클래스를 가진 요소 선택 : .클래스명A.클래스명B {}
+
+특정 태그 중 특정 클래스를 가진 요소 선택 : 태그명.클래스명 {}
+
+
+
+*/
+/* 아이디가 test1인 요소를 선택 */
+#test1{
+  color: hotpink; /* 글자색 설정 */
+  font-weight: bold;/* 글자 굵기 : 굵게 */
+  font-size: 20px;  /* 글자 크기 : 20px */
+}
+
+
+
+/* id(#) 선택자 */
+
+#li1 { background-color: #31d4daee;}
+
+#li2 { background-color: #FFB4C2;}
+
+#li3 { background-color: #DA7297;}
+
+/* 태그 선택자 */
+strong{
+  font-size: 18px;
+  font-family: '고딕';
+  color: #402E7A; /* 글자색 */
+}
+
+code{
+  background-color: #9BEC00; /* 배경색 */
+  display: block; /* 요소를 block 형식으로 변경 */
+  font-weight: bold;
+}
+
+/* class(.) 선택자 */
+.class-test1 {
+  background-color: black;
+  color: white;
+}
+
+.class-test2 {
+  background-color: yellow;
+  color: red;
+}
+
+
+
+/* 한 요소에 여러 클래스 작성하기 */
+.bg-green{ background-color: green; }
+.font-pink{ color: pink; }
+
+/* 웹 폰트 적용 */
+@font-face {
+  font-family: 'RixInooAriDuriR';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/RixInooAriDuriR.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PyeongChangPeace-Bold';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+/* 모든 요소(*) 선택자 */
+* {    
+  /* 모든 요소 글꼴 변경 */
+  font-family: 'PyeongChangPeace-Bold';
+}
